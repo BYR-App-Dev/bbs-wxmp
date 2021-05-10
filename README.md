@@ -1,5 +1,8 @@
 # 北邮人论坛微信小程序
 
+## 使用
+下载微信开发者工具 https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html 后打开目录
+
 ## 结构
 
 - ```custom-tab-bar```: 切换首页各页面
