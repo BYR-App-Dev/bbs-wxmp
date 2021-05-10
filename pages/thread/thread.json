@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "mp-html": "mp-html",
+    "audio": "../../miniprogram_npm/mp-html/audio/audio"
+  }
+}

@@ -1,0 +1,14 @@
+<!--pages/board_selector/board_selector.wxml-->
+<template name="sectioncell">
+  <view class="sectioncell" bindtap="onTapSection"  data-sectionname="{{name}}">
+    <view class="sectioncelltext">
+      <text>{{description}}</text>
+    </view>
+  </view>
+</template>
+
+<view class="container">
+  <view>
+    <view wx:for="{{sections}}" wx:for-index="idx" wx:for-item="item" wx:key="objcode"><template is="sectioncell" data="{{...item}}"></template></view>
+  </view>
+</view>

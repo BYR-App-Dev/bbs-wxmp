@@ -1,0 +1,56 @@
+<!--pages/article/article.wxml-->
+<template name="threadCell">
+  <view class="thread-cell">
+    <view class="cellhead">
+      <view class="cellheadleft">
+        <image bindtap="bindViewTap" class="avatar" src="{{user.face_url}}" mode="aspectFill"></image>
+        <view class="artinfo">
+          <view>
+            <text wx:if="{{user.gender == 'm'}}" class="userid male">{{user.id}}</text>
+            <text wx:elif="{{user.gender == 'f'}}" class="userid female">{{user.id}}</text>
+            <text wx:else class="userid">{{user.id}}</text>
+          </view>
+          <view>
+            <text class="posttime">{{dateTime}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="cellheadright">
+        <text class="reply" bindtap="onTapReply" data-idtor="{{id}}" data-boardname="{{board_name}}" data-boarddesc="{{board_description}}" data-content="{{content}}" data-author="{{user.id}}">回复</text>
+        <text wx:if="{{position + (hasSubject?0:1) == 0}}" class="pos">楼主</text>
+        <text wx:elif="{{position + (hasSubject?0:1) == 1}}" class="pos">沙发</text>
+        <text wx:elif="{{position + (hasSubject?0:1) == 2}}" class="pos">板凳</text>
+        <text wx:else class="pos">{{position}}楼</text>
+      </view>
+    </view>
+    <block wx:if="{{position + (hasSubject?0:1) == 0}}" >
+      <view class="title"><text>{{title}}</text></view>
+    </block>
+    <view wx:for="{{parsedContent}}">
+      <mp-html wx:if="{{item.ismd == true}}" markdown="true" class="content" content="{{item.content}}" selectable="true"/>
+      <mp-html wx:else class="content" content="{{item.content}}" selectable="true"/>
+    </view>
+    <view class="artvotes">
+      <text wx:if="{{is_liked == true}}" class="likevotes"> 👍 </text>
+      <text wx:else class="normalvotes" bindtap="onTapLike" data-celltype="{{celltype}}" data-idx="{{idx}}" data-idtor="{{id}}"> 👍 </text>
+      <text> {{like_sum}} </text>
+      <text wx:if="{{is_votedown == true}}" class="disvotes"> 👎 </text>
+      <text wx:elif="{{celltype!=1}}" class="normalvotes" bindtap="onTapVotedown" data-celltype="{{celltype}}" data-idx="{{idx}}" data-idtor="{{id}}"> 👎 </text>
+      <text wx:if="{{celltype!=1}}"> {{votedown_sum}} </text>
+    </view>
+  </view>
+</template>
+
+<view class="container">
+  <view>
+    <view wx:if="{{hasSubject}}"><template is="threadCell" data="{{...subject, celltype:0, hasSubject:hasSubject}}"></template></view>
+  </view>
+    <view wx:if="{{likeArticles&&likeArticles.length>0}}" class="like-label-line"><mp-icon icon="like" color="red" size="{{20}}" type="field"></mp-icon><text style="color:#aaaaaa; font-size:11">热门回复</text></view>
+  <view>
+    <view wx:for="{{likeArticles}}" wx:for-index="idx" wx:for-item="item" wx:key="objCode"><template is="threadCell" data="{{...item, celltype:1, idx:idx, hasSubject:hasSubject}}"></template></view>
+  </view>
+    <view wx:if="{{articles&&articles.length>0}}" class="all-label-line"><mp-icon icon="comment" color="#db9b35" size="{{20}}" type="field"></mp-icon><text style="color:#aaaaaa; font-size:11">全部回复</text></view>
+  <view>
+    <view wx:for="{{articles}}" wx:for-index="idx" wx:for-item="item" wx:key="objCode"><template is="threadCell" data="{{...item, celltype:2, idx:idx, hasSubject:hasSubject}}"></template></view>
+  </view>
+</view>

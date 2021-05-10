@@ -1,0 +1,14 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+<view class="floating-ball" bindtap="toggleTab">
+  <view class="floating-ball open" wx:if="{{!showSelector}}"><mp-icon icon="more" color="white" size="{{40}}"></mp-icon></view>
+  <view class="floating-ball close" wx:if="{{showSelector}}"><mp-icon icon="close" color="white" size="{{40}}"></mp-icon></view>
+</view>
+<view wx:if="{{showSelector}}">
+  <view class="tab-bar">
+    <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-tabtype="{{item.tabtype}}" data-index="{{index}}" bindtap="switchTab">
+      <mp-icon icon="{{item.icon}}" color="{{item.iconColor}}" size="{{40}}" type="{{selected == index ? 'field' : 'outline'}}"></mp-icon>
+      <view style="color: {{selected == index ? selectedColor : color}}">{{item.text}}</view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,69 @@
+/* pages/board/board.wxss */
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.board-item-cell {
+  padding: 30rpx 35rpx 30rpx 35rpx;
+  background-color: #ffffff;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 1rpx;
+  border-color: #eeeeee;
+}
+
+.board-item-cell .toptitle {
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 0 0 0;
+}
+
+.board-item-cell .title {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0 0 0 0;
+}
+
+.board-item-cell .content {
+  line-height: 160%;
+  font-size: 14px;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  color: #868686;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  box-orient: vertical;
+  line-clamp: 3;
+  padding: 0 10rpx 0 0;
+}
+
+.board-item-cell .image {
+  padding: 0 0 0 15rpx;
+}
+
+.board-item-cell .bottom {
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx 10rpx 0rpx 10rpx;
+  justify-content: space-between;
+}
+
+.board-item-cell .bottom .datetime {
+  font-size: 12px;
+  padding: 10rpx 0 0rpx 0;
+  color: #aaaaaa;
+}
+
+.board-item-cell .bottom .replycount {
+  font-size: 12px;
+  padding: 10rpx 0 0rpx 0;
+  color: #aaaaaa;
+}

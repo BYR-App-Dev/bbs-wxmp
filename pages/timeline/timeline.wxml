@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<template name="timelinecell">
+  <view class="timeline-cell" bindtap="bindCellTap"  data-boardname="{{board_name}}" data-artid="{{id}}">
+    <view class="title"><text>{{title}}</text></view>
+    <view class="flex-wrp" style="flex-direction:row;">
+      <view><view class="content"><text>{{content}}</text></view></view>
+      <block wx:if="{{isImgShow}}">
+        <view class="image">
+          <mp-html content="{{imgHTML}}" />
+        </view>
+      </block>
+    </view>
+    <view class="bottom"><text class="datetime">{{dateTime}}</text><text class="boarddesc">#{{board_description}}</text></view>
+  </view>
+</template>
+
+<view class="container">
+  <view>
+    <view wx:for="{{timeline}}" wx:for-index="idx" wx:for-item="item" wx:key="objcode"><template is="timelinecell" data="{{...item}}"></template></view>
+  </view>
+</view>
+<view class="bottomspace"></view>

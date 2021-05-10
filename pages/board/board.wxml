@@ -1,0 +1,21 @@
+<!--pages/board/board.wxml-->
+<template name="boardItemCell">
+  <view class="board-item-cell" bindtap="bindCellTap"  data-boardname="{{board_name}}" data-articleid="{{id}}">
+    <view wx:if="{{is_top == true}}" class="toptitle"><text>{{title}}</text></view>
+    <view wx:if="{{is_top == false}}" class="title"><text>{{title}}</text></view>
+    <view wx:if="{{is_top == false}}" class="bottom">
+      <text class="datetime">{{dateTime}}</text>
+      <view>
+        <mp-icon icon="comment" color="#aaaaaa"></mp-icon>
+        <text class="replycount"> {{reply_count - 1}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<view class="container">
+  <view>
+    <view wx:for="{{boardArticles}}" wx:for-index="idx" wx:for-item="item" wx:key="objCode"><template is="boardItemCell" data="{{...item}}"></template></view>
+  </view>
+</view>
+<view class="bottomspace"></view>

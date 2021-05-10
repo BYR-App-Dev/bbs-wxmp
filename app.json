@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/topten/topten",
+    "pages/timeline/timeline",
+    "pages/logs/logs",
+    "pages/thread/thread",
+    "pages/board/board",
+    "pages/post/post",
+    "pages/sectionlist/sectionlist",
+    "pages/boardlist/boardlist"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#55bbff",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/topten/topten",
+        "text": "十大"
+      },
+      {
+        "pagePath": "pages/timeline/timeline",
+        "text": "时间线"
+      }
+    ]
+  },
+  "usingComponents": {"mp-icon": "weui-miniprogram/icon/icon"}
+}

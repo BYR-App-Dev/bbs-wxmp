@@ -1,0 +1,28 @@
+<!--pages/post.wxml-->
+<view wx-if="{{titlenotfixed}}" class="board-select">
+  <text bindtap="onSelectBoard" wx:if="{{selectedBoard}}" class="{{selected-board}}">版面: {{selectedBoardDesc}}</text>
+  <text bindtap="onSelectBoard" wx:else class="{{selected-board}}">选择版面</text>
+</view>
+<view class="inputs">
+  <form bindsubmit="bindFormSubmit">
+    <input wx-if="{{titlenotfixed}}" class="title-input" placeholder="标题" bindinput='onTitleInput' name="titleinput"/>
+    <view class="menu">
+      <!-- <view class="menu-item"><mp-icon icon="text" color="#5c5c5c" size="{{30}}" type="field"></mp-icon></view> -->
+      <view class="menu-item" wx:if="{{!showEmoticon}}" bindtap="emoticonTap"><mp-icon icon="sticker" color="#5c5c5c" size="{{30}}" type="field"></mp-icon></view>
+      <view class="menu-item" wx:if="{{showEmoticon}}" bindtap="emoticonTap"><mp-icon icon="sticker" color="#db9b35" size="{{30}}" type="field"></mp-icon></view>
+    </view>
+    <textarea class="content-input" placeholder="内容" auto-height bindinput="onContentInput" bindblur="onBlur" name="textarea" focus="{{focus}}" cursor="{{cursor}}" value="{{content}}"/>
+    <view wx:if="{{showEmoticon}}" class="catebuttons">
+      <view class="{{emoticoncateselected == 'yoyocici' ? 'catebutton selected':'catebutton notselected'}}" bindtap="emoticonCateTap" data-cate="yoyocici"><text>悠嘻猴</text></view>
+      <view class="{{emoticoncateselected == 'tuzki' ? 'catebutton selected':'catebutton notselected'}}" bindtap="emoticonCateTap" data-cate="tuzki"><text>兔斯基</text></view>
+      <view class="{{emoticoncateselected == 'oniontou' ? 'catebutton selected':'catebutton notselected'}}" bindtap="emoticonCateTap" data-cate="oniontou"><text>洋葱头</text></view>
+    </view>
+    <view wx:if="{{showEmoticon && emoticoncateselected == 'yoyocici'}}" class="emoticonlist"><view wx:for="{{yoyocici}}"><view bindtap="emoticonSelect" data-item="{{item}}" data-cate="a"><image src="https://bbs.byr.cn/img/ubb/ema/{{item}}.gif" class="emoticonitem"></image></view></view></view>
+    <view wx:if="{{showEmoticon && emoticoncateselected == 'tuzki'}}" class="emoticonlist"><view wx:for="{{tuzki}}"><view bindtap="emoticonSelect" data-item="{{item}}" data-cate="b"><image src="https://bbs.byr.cn/img/ubb/emb/{{item}}.gif" class="emoticonitem"></image></view></view></view>
+    <view wx:if="{{showEmoticon && emoticoncateselected == 'oniontou'}}" class="emoticonlist"><view wx:for="{{oniontou}}"><view bindtap="emoticonSelect" data-item="{{item}}" data-cate="c"><image src="https://bbs.byr.cn/img/ubb/emc/{{item}}.gif" class="emoticonitem"></image></view></view></view>
+    <button form-type="submit">发送</button>
+  </form>
+  <view class="quoteview">
+    <text class="quote">{{tail}}</text>
+  </view>
+</view>

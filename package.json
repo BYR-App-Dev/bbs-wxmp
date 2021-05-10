@@ -1,0 +1,17 @@
+{
+  "name": "byr-wx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "npmindex.js",
+  "dependencies": {
+    "@miniprogram-component-plus/emoji": "^1.0.1",
+    "crypto-js": "^4.0.0",
+    "mp-html": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,25 @@
+<!--pages/boardlist/boardlist.wxml-->
+<template name="subsectioncell">
+  <view class="subsectioncell" bindtap="onTapSubsection"  data-subsectionname="{{name}}">
+    <view class="subsectioncelltext">
+      <text>子分区 - {{name}}</text>
+    </view>
+  </view>
+</template>
+
+<template name="boardcell">
+  <view class="boardcell" bindtap="onTapBoard"  data-boardname="{{name}}" data-description="{{description}}">
+    <view class="boardcelltext">
+      <text>{{description}}</text>
+    </view>
+  </view>
+</template>
+
+<view class="container">
+  <view>
+    <view wx:for="{{subsection}}" wx:for-index="idx" wx:for-item="item" wx:key="objcode"><template is="subsectioncell" data="{{...item}}"></template></view>
+  </view>
+  <view>
+    <view wx:for="{{board}}" wx:for-index="idx" wx:for-item="item" wx:key="objcode"><template is="boardcell" data="{{...item}}"></template></view>
+  </view>
+</view>

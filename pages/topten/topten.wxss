@@ -1,0 +1,54 @@
+/**index.wxss**/
+.flex-wrp{
+  display:flex;
+  display:-webkit-flex;
+  padding: 10rpx 10rpx 10rpx 10rpx;
+  justify-content: space-between;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.topten-cell {
+  padding: 30rpx 35rpx 30rpx 35rpx;
+  background-color: #ffffff;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 1rpx;
+  border-color: #eeeeee;
+}
+
+.topten-cell .headpart {
+  display: flex;
+}
+
+.topten-cell .title {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0 0 0 0;
+}
+
+.topten-cell .content {
+  line-height: 160%;
+  font-size: 14px;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  color: #868686;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  box-orient: vertical;
+  line-clamp: 3;
+  padding: 0 10rpx 0 0;
+}
+
+.topten-cell .image {
+  padding: 0 0 0 15rpx;
+}

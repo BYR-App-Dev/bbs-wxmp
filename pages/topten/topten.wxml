@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<template name="toptenCell">
+  <view class="topten-cell" bindtap="bindCellTap"  data-boardname="{{board_name}}" data-artid="{{id}}">
+    <view class="headpart"><text class="title">{{title}}</text></view>
+    <view class="flex-wrp" style="flex-direction:row;">
+      <view><view class="content"><text>{{content}}</text></view></view>
+      <block wx:if="{{isImgShow}}">
+        <view class="image">
+          <mp-html content="{{imgHTML}}" />
+        </view>
+      </block>
+  </view>
+  </view>
+</template>
+
+<view class="container">
+  <view>
+    <view wx:for="{{topten}}" wx:for-index="idx" wx:for-item="item" wx:key="objcode"><template is="toptenCell" data="{{...item}}"></template></view>
+  </view>
+</view>
+<view class="bottomspace"></view>

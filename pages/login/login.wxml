@@ -1,0 +1,26 @@
+<view class="page-body">
+  <view style="flex-direction: column;display: flex;justify-content: center;width: 100%;height: 100%;align-items: center;background-size: 100% 100%;background-image: url('{{welUrl}}')">
+    <block wx:if="{{loading}}">
+      <view class="login-section" style="flex-direction: column;display: flex;align-items: center;">
+        <view class="page-section">
+          <view class="weui-cells__title">用户ID</view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input">
+                <input class="weui-input" placeholder="ID" bindinput='idInput'/>
+              </view>
+            </view>
+        </view>
+        <view class="page-section">
+        <view class="weui-cells__title">密码</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <input class="weui-input" password type="text" placeholder="password" bindinput='pwdInput' />
+            </view>
+          </view>
+        </view>
+        <text>{{warningTxt}}</text>
+        <button bindtap="loginTap" class="btn">登录</button>
+      </view>
+    </block>
+  </view>
+</view>

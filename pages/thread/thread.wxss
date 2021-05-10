@@ -1,0 +1,119 @@
+/* pages/article/article.wxss */
+.thread-cell {
+  padding: 30rpx 35rpx 30rpx 35rpx;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 1rpx;
+  border-color: #eeeeee;
+}
+
+.thread-cell .cellhead{
+  display:flex;
+  display:-webkit-flex;
+  justify-content: space-between;
+  padding: 20rpx 0rpx 20rpx 0rpx;
+}
+
+.thread-cell .cellhead .cellheadleft{
+  display:flex;
+  display:-webkit-flex;
+  justify-content: left;
+}
+
+.thread-cell .cellhead .cellheadright{
+  display:flex;
+  display:-webkit-flex;
+  justify-content: right;
+}
+
+.thread-cell .cellhead .cellheadright .reply{
+  font-size: 14px;
+  color: #55aaff;
+  padding: 0rpx 20rpx 0rpx 20rpx;
+}
+
+.thread-cell .cellhead .cellheadright .pos{
+  font-size: 14px;
+  color: #888888;
+}
+
+.thread-cell .cellhead .cellheadleft .avatar{   
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+
+.thread-cell .cellhead .cellheadleft .artinfo{   
+  padding: 0 20rpx 0 20rpx;
+}
+
+.thread-cell .cellhead .cellheadleft .artinfo .userid{
+  font-size: 14px;
+  color: #888888;
+}
+
+.thread-cell .cellhead .cellheadleft .artinfo .userid.male{
+  font-size: 14px;
+  color: #66aaff;
+}
+
+.thread-cell .cellhead .cellheadleft .artinfo .userid.female{
+  font-size: 14px;
+  color: #ff6666;
+}
+
+.artvotes {
+  display:flex;
+  display:-webkit-flex;
+  padding: 10rpx 10rpx 10rpx 10rpx;
+  justify-content: flex-end;
+  color: #aaaaaa;
+}
+
+.normalvotes {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  padding: 0rpx 10rpx 0rpx 10rpx;
+}
+
+.likevotes {
+  color: transparent;
+  padding: 0rpx 10rpx 0rpx 10rpx;
+  text-shadow: 0 0 0 #ff6666;
+}
+
+.disvotes {
+  color: transparent; 
+  padding: 0rpx 10rpx 0rpx 10rpx;
+  text-shadow: 0 0 0 #0088cc;
+}
+
+.thread-cell .cellhead .cellheadleft .artinfo .posttime{
+  font-size: 12px;
+  color: #888888;
+}
+
+.like-label-line {
+  background-color: #eeeeee;
+}
+
+.all-label-line {
+  background-color: #eeeeee;
+}
+
+.thread-cell .title {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0rpx 0 10rpx 0;
+}
+
+.thread-cell .content {
+  line-height: 200%;
+  font-size: 14px;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  color: #000000;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
